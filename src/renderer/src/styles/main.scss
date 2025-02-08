@@ -1,0 +1,101 @@
+@use "variables" as *;
+
+html {
+  overflow-y: auto !important;
+}
+
+body {
+  overflow: hidden;
+  background-image: url("@renderer/assets/wavy-lines.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  user-select: none;
+}
+
+/* scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* scrollbar track */
+::-webkit-scrollbar-track {
+  background: #212121;
+}
+
+/* scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+::-webkit-scrollbar-corner {
+  background: #121212;
+}
+
+code,
+pre {
+  font-family: $mono-font-family !important;
+  font-size: 0.875rem !important;
+  font-weight: 300 !important;
+}
+
+code {
+  padding: 3px 5px;
+  border-radius: 2px;
+  background-color: rgb(var(--v-theme-surface));
+}
+
+.text-mono,
+.font-mono {
+  font-family: $mono-font-family !important;
+  &.text-mono-1 {
+    font-size: 0.875rem !important;
+  }
+}
+
+.mono-sm--text {
+  font-size: small !important;
+  input,
+  textarea {
+    font-size: small !important;
+  }
+}
+
+.font-mono--input {
+  input {
+    font-family: $mono-font-family !important;
+  }
+}
+
+.mono-sm--input {
+  input {
+    font-size: small !important;
+  }
+}
+
+.mono-sm-textarea {
+  textarea {
+    font-size: small !important;
+  }
+}
+
+.text-title-1 {
+  font-size: 1.15rem !important;
+}
+
+.text-title-2 {
+  font-size: 1.075rem !important;
+}
+
+.text-title-3 {
+  font-size: 1rem !important;
+  letter-spacing: 0.089em !important;
+}
+
+.text-title-4 {
+  font-size: 0.875rem !important;
+  letter-spacing: 0.089em !important;
+}

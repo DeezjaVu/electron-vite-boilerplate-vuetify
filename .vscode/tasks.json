@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "vite:dev",
+			"problemMatcher": [],
+			"label": "vite:dev",
+			"detail": "electron-vite dev",
+			"isBackground": true
+		},
+		{
+			"type": "npm",
+			"script": "vite:build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "vite:build",
+			"detail": "electron-vite build"
+		},
+		{
+			"type": "npm",
+			"script": "build:win",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "build:win",
+			"detail": "npm run vite:build && electron-builder --win"
+		}
+	]
+}
