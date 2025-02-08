@@ -4,7 +4,11 @@
   "description": "A boilerplate Electron application with Vuetify",
   "main": "./out/main/index.js",
   "author": "DeezjaVu",
-  "homepage": "https://electron-vite.org",
+  "homepage": "https://github.com/DeezjaVu/electron-vite-boilerplate-vuetify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeezjaVu/electron-vite-boilerplate-vuetify.git"
+  },
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
@@ -40,12 +44,5 @@
     "vite-plugin-vuetify": "^2.1.0",
     "vue": "^3.5.13",
     "vuetify": "^3.7.11"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "electron",
-      "esbuild",
-      "vue-demi"
-    ]
   }
 }

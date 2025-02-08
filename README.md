@@ -1,26 +1,47 @@
-# electron-vite-vuetify-boilerplate
+# electron-vite-boilerplate-vuetify
 
-An Electron application with Vue
+An Electron (electron-vite) application with Vuetify.
+This repository is meant to be cloned.
 
-## Recommended IDE Setup
+## Documentation
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+Detailed documentation for this and other boilerplate repositories can be found here:
+
+<!-- TODO: fix boilerplate monorepo url -->
+
+<!-- - [Boilerplate Monorepo](https://github.com/DeezjaVu/boilerplate-monorepo) -->
+
+- [Boilerplate Monorepo (coming soon)](https://github.com/DeezjaVu)
 
 ## Project Setup
 
-### Install
+### Clone
+
+Start by cloning to repo to a local folder.
 
 ```bash
-$ npm install
+git clone https://github.com/DeezjaVu/electron-vite-boilerplate-vuetify.git
+```
+
+### Install
+
+Go into the folder where the repo was cloned and run the following command:
+
+```bash
+npm install
 ```
 
 ### Development
 
+To test that everything is working as-is, run the following command:
+
 ```bash
-$ npm run dev
+npm run vite:dev
 ```
 
 ### Build
+
+To verify that a production build can be built, run one of the following scripts:
 
 ```bash
 # For windows
@@ -32,3 +53,13 @@ $ npm run build:mac
 # For Linux
 $ npm run build:linux
 ```
+
+### Update
+
+If you got this far without any hickups, you should try and update the packages to the latest version.
+
+```bash
+npm update
+```
+
+Note: I'll look into running an automated [Github workflow](https://docs.github.com/en/actions/writing-workflows/about-workflows) to update the `package.json` dependencies with the latest versions.
