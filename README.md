@@ -1,11 +1,19 @@
 # electron-vite-boilerplate-vuetify
 
-An Electron (electron-vite) application with Vuetify.
+An Electron (electron-vite) boilerplate application with Vuetify.
 This repository is meant to be cloned.
+
+It is a fully configured starting point for an Electron app and includes the following:
+
+- Electron
+- Electron Builder
+- Vite
+- Vuetify
+- Pinia
 
 ## Documentation
 
-Detailed documentation for this and other boilerplate repositories can be found here:
+More information about this and other boilerplate repositories can be found here:
 
 <!-- TODO: fix boilerplate monorepo url -->
 
@@ -17,7 +25,7 @@ Detailed documentation for this and other boilerplate repositories can be found 
 
 ### Clone
 
-Start by cloning to repo to a local folder.
+Start by cloning this repo to a local folder.
 
 ```bash
 git clone https://github.com/DeezjaVu/electron-vite-boilerplate-vuetify.git
@@ -45,18 +53,18 @@ To verify that a production build can be built, run one of the following scripts
 
 ```bash
 # For windows
-$ npm run build:win
+npm run build:win
 
 # For macOS
-$ npm run build:mac
+npm run build:mac
 
 # For Linux
-$ npm run build:linux
+npm run build:linux
 ```
 
 ### Update
 
-If you got this far without any hickups, you should try and update the packages to the latest version.
+If you got this far without any hickups, you should try and update the project's dependencies to the latest version.
 
 ```bash
 npm update
