@@ -1,8 +1,8 @@
 name: Update package.json
 
 on:
-  schedule:
-    - cron: '0 0 * * 3'
+  schedule: # Ignore the warning for this line
+    - cron: "0 0 * * 3"
   workflow_dispatch:
 
 jobs:
