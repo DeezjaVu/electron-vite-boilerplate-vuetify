@@ -1,9 +1,5 @@
 name: Update package.json
 
-# Allow the workflow to push to the repo
-permissions:
-  contents: write
-
 on:
   schedule:
     - cron: '0 0 * * 3'
@@ -11,6 +7,11 @@ on:
 
 jobs:
   package-update:
+    # Least-privilege: only this job gets write access to contents and PRs
+    permissions:
+      contents: write
+      pull-requests: write
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -18,6 +19,11 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true
+
+      - name: Configure git author
+        run: |
+          git config user.email "p.ginneberge@gmail.com"
+          git config user.name "DeezjaVu"
 
       - name: package-update
         uses: taichi/actions-package-update@master
