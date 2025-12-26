@@ -1,16 +1,12 @@
 import { resolve } from "path";
-import { defineConfig, externalizeDepsPlugin } from "electron-vite";
+import { defineConfig } from "electron-vite";
 import Vue from "@vitejs/plugin-vue";
 import Unfonts from "unplugin-fonts/vite";
 import Vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 export default defineConfig({
-  main: {
-    plugins: [externalizeDepsPlugin()]
-  },
-  preload: {
-    plugins: [externalizeDepsPlugin()]
-  },
+  main: {},
+  preload: {},
   renderer: {
     plugins: [
       Vue({

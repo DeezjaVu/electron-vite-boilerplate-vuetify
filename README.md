@@ -1,15 +1,15 @@
 # electron-vite-boilerplate-vuetify
 
-An Electron (electron-vite) boilerplate application with Vuetify.
+An Electron ([electron-vite](https://electron-vite.org/)) boilerplate application with [Vuetify](https://vuetifyjs.com/en/).
 This repository is meant to be cloned.
 
 It is a fully configured starting point for an Electron app and includes the following:
 
-- Electron
-- Electron Builder
-- Vite
-- Vuetify
-- Pinia
+- [Electron](https://www.electronjs.org/)
+- [Electron Builder](https://www.electron.build/index.html)
+- [Vite](https://vitejs.dev/)
+- [Vuetify](https://vuetifyjs.com/en/)
+- [Pinia](https://pinia.esm.dev/)
 
 ## Documentation
 
@@ -33,11 +33,15 @@ git clone https://github.com/DeezjaVu/electron-vite-boilerplate-vuetify.git
 
 ### Install
 
+Note: Because this repo uses a Github workflow to update the `package.json` file, it may be out of sync with the `package-lock.json` file. To fix that, you can simply delete the `package-lock.json` file before running `npm install`.
+
 Go into the folder where the repo was cloned and run the following command:
 
 ```bash
 npm install
 ```
+
+This will then install all the specified dependencies in the `package.json` file and afterwards execute the `postinstall` script.
 
 ### Development
 
@@ -69,5 +73,3 @@ If you got this far without any hickups, you should try and update the project's
 ```bash
 npm update
 ```
-
-Note: I'll look into running an automated [Github workflow](https://docs.github.com/en/actions/writing-workflows/about-workflows) to update the `package.json` dependencies with the latest versions.
