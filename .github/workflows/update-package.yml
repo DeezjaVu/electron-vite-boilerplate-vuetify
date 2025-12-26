@@ -1,17 +1,15 @@
 name: Update package.json
 
 on:
-  schedule: # Ignore the warning for this line
+  schedule:
     - cron: "0 0 * * 3"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   package-update:
-    # Least-privilege: only this job gets write access to contents and PRs
-    permissions:
-      contents: write
-      pull-requests: write
-
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,13 +23,28 @@ jobs:
           git config user.email "p.ginneberge@gmail.com"
           git config user.name "DeezjaVu"
 
-      - name: package-update
+      - name: Update package.json locally
         uses: taichi/actions-package-update@master
         env:
           AUTHOR_EMAIL: p.ginneberge@gmail.com
           AUTHOR_NAME: DeezjaVu
-          EXECUTE: "true"
+          EXECUTE: "false"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOG_LEVEL: debug
         with:
           args: -u --packageFile package.json --loglevel verbose
+
+      - name: Show changes
+        run: git status --porcelain && git --no-pager diff --name-only || true
+
+      - name: Commit and push to main if changed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git add package.json package-lock.json 2>/dev/null || git add -A
+            git commit -m "chore(deps): update dependencies via actions-package-update" || echo "Nothing to commit"
+            # Push to main (this will fail if branch protection disallows direct pushes)
+            git push origin HEAD:main
+            echo "Pushed updates to main."
+          else
+            echo "No dependency updates found."
+          fi
