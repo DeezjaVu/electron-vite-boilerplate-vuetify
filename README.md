@@ -41,7 +41,7 @@ Go into the folder where the repo was cloned and run the following command:
 npm install
 ```
 
-This will then install all the specified dependencies in the `package.json` file and afterwards execute the `postinstall` script.
+This will then install all the dependencies specified in the `package.json` file and afterwards execute the `postinstall` script.
 
 ### Development
 
@@ -72,4 +72,41 @@ If you got this far without any hickups, you should try and update the project's
 
 ```bash
 npm update
+```
+
+## Project Structure
+
+The `src` folder has the following structure:
+
+```bash
+- src/
+  - main/
+      index.js
+  - preload/
+      index.js
+  - renderer/
+      index.html
+    - src/
+        App.vue
+        main.js
+```
+
+- `src/main/` contains the Electron main process code.
+- `src/preload/` contains the Electron preload process code.
+- `src/renderer/` contains the Electron renderer process code.
+
+Furthermore, the `src/renderer/src/` folder contains the actual Vue/Vuetify application code.
+
+This seperation is also reflected in the `Vite` configuration files.
+
+```js
+// electron.vite.config.mjs
+import { defineConfig } from "vite";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  main: {},
+  preload: {},
+  renderer: {}
+});
 ```
