@@ -5,7 +5,9 @@ import Unfonts from "unplugin-fonts/vite";
 import Vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 export default defineConfig({
+  // https://electron-vite.org/guide/dev#multiple-windows-app
   main: {},
+  // https://electron-vite.org/guide/dev#multiple-windows-app
   preload: {},
   renderer: {
     plugins: [
