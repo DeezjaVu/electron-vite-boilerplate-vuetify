@@ -78,18 +78,23 @@ npm update
 
 The `src` folder has the following structure:
 
-```bash
-- src/
-  - main/
-      index.js
-  - preload/
-      index.js
-  - renderer/
-      index.html
-    - src/
-        App.vue
-        main.js
-```
+<!-- markdownlint-disable MD033 -->
+<pre>
+src
+├───main
+│   └───index.js
+│
+├───preload
+│   └───index.js
+│
+└───renderer
+    │───index.html
+    │
+    └───src
+        │───App.vue
+        └───main.js
+</pre>
+<!-- markdownlint-enable MD037 -->
 
 - `src/main/` contains the Electron main process code.
 - `src/preload/` contains the Electron preload process code.
